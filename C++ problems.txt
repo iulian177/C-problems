@@ -1,0 +1,432 @@
+//Pascale Iulian
+//1. Să se scrie un program pentru determinarea mediei aritmetice a trei numere neîntregi
+#include <stdio.h>
+double media_aritmetica(double x, double y, double z);
+int main() {
+   double a,b,c;
+   printf("Introduceti 3 nr neintregi\n");
+   scanf("%lf\n%lf\n%lf", &a, &b, &c);
+   printf("media aritmetica este: %lf", media_aritmetica(a, b, c));
+    
+    return 0;
+}
+double media_aritmetica(double x, double y, double z)
+{
+    return (x+y+z)/3;
+}
+
+
+//Pascale Iulian
+//2. Să se scrie un program pentru determinarea mediei geometrice a două numere întregi.
+#include <stdio.h>
+#include <math.h>
+double media_geometrica(int x, int y);
+int main() {
+   int a,b;
+   printf("Introduceti 2 nr intregi\n");
+   scanf("%d\n%d\n", &a, &b);
+   printf("media geometrica este: %lf", media_geometrica(a, b));
+    
+    return 0;
+}
+double media_geometrica(int x, int y)
+{
+    return sqrt(x*y);
+}
+
+
+//Pascale Iulian
+//3. Realizaţi o aplicaţie care citeşte de la intrarea standard două valori pentru variabilele R1 şi R2
+//(intregi), reprezentând valoarea rezistenţelor R1 şi R2, iar apoi apelează funcţii ce calculează
+//rezistenţa echivalentă grupării serie, respectiv grupării paralel, după care afişează valorile
+//returnate cu 3 zecimale şi aliniere la dreapta.
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int  rs(int  x, int  y)
+{
+    int  rs;
+    rs = x + y;
+    return  rs;
+}
+int  rp(int  x, int  y)
+{
+    double  rp;
+    rp = (x * y) / x + y;
+    return  rp;
+}
+int  main()
+{
+    int  r1, r2, rs;
+    double rp;
+    printf("introduceti cele 2 valori ale rezistentelor:/n");
+    scanf("%d/n%d", &r1, &r2);
+    printf("valoarea gruparii serie: %.3d/n", rs(r1, r2) );
+    printf("valoarea gruparii paralel: %.3lf", rp(r1, r2) );
+
+    return  0;
+}
+
+
+//Pascale Iulian
+//4. Scrieţi o aplicaţie care citeşte de la intrarea standard două valori pentru variabilele C1 şi C2,
+//reprezentând valori de capacitati, iar apoi apelează funcţii ce calculează capacitatea echivalentă
+//grupării serie, respectiv grupării paralel, după care afişează valorile returnate cu 4 zecimale şi
+//aliniere la stânga.
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include<iostream>
+using  namespace  std;
+
+double  citire(void)
+{
+    double  a;
+    printf("introduceti  valoarea  rezistentei");
+    scanf("%lf", &a);
+    return  a;
+}
+double  rs(double  x, double  y)
+{
+    double  rs;
+    rs = x + y;
+    return  rs;
+}
+double  rp(double  x, double  y)
+{
+    double  rp;
+    rp = (x * y) / (x + y);
+    return  rp;
+}
+int  main()
+{
+    double  r1, r2, rss, rpp;
+    r1 = citire();
+    r2 = citire();
+    rss = rs(r1, r2);
+    rpp = rp(r1, r2);
+    printf("valoarea  capacitatii  serie  este:%-.4lf/n", rss);
+    printf("valoarea  capacitatii  paralel  este:%-.4lf", rpp);
+
+    return  0;
+}
+
+//Pascale Iulian
+//5. Citiţi de la tastatură două valori întregi care reprezintă catetele unui triunghi dreptunghic.
+//Determinaţi ipotenuza şi perimetrul triunghiului. Afişaţi rezultatul pe linii diferite.
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include<iostream>
+using  namespace  std;
+#include <math.h>
+
+int  main()
+{
+    int  a, b, alfa;   double c, p;
+    printf("cateta 1 este:");
+    scanf("%d", &a);
+    printf("cateta 2 este:");
+    scanf("%d", &b);
+    c = sqrt((a * a) + (b * b));
+    p = a + b + c;
+    printf("valoarea  ipotenuzei  este:%lf \n", c);
+    printf("perimetrul  triunghiului  este:%lf", p);
+
+    return  0;
+}
+
+
+//Pascale Iulian
+//6. Citiţi de la tastatură două valori întregi a şi b (a0), unde a şi b sunt coeficienţii ecuaţiei ax+b=0.
+//Rezolvaţi ecuaţia şi afişaţi rezultatul.
+#define_CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#include<iostream>
+using  namespace  std;
+
+int  main()
+{
+        int  a,  b,  x;
+        cout  <<  "a  este  diferit  de  0";
+        cin  >>  a;
+        cin  >>  b;
+        x  =  (-b)  /  a;
+        cout  <<  x;
+
+return  0;
+}
+
+//Pascale Iulian
+//7. Se citesc de la tastatură numele a 2 studenți și nota fiecăruia la programare. Să se afișeze pe linii
+//separate numele fiecărui student într - un câmp de afișare cu dimensiunea 20, aliniat la dreapta,
+//respectiv la stânga și media notelor lor, cu o precizie de 2 zecimale.
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+
+int main()
+{
+	char student1[100], student2[100];
+	double nota1, nota2;
+	printf("introduceti numele1:");
+	scanf("%s", &student1);
+	printf(" \n introduceti nota1:");
+	scanf("%lf", &nota1);
+	printf(" \n introduceti numele2:");
+	scanf("%s", &student2);
+	printf(" \n introduceti nota2:");
+	scanf("%lf", &nota2);
+	printf("%20s\n ", student1);
+	printf("%-20s\n ", student2);
+	printf("%.2lf", (nota1 + nota2) / 2);
+
+	return 0;
+}
+
+//Pascale Iulian
+//8. Se citește de la tastatură un număr întreg, ce reprezintă raza unui cerc.Să se afișeze lungimea și
+//aria cercului de rază dată, cu o precizie de 3 zecimale, într - un câmp de afișare cu dimensiunea 10.
+//Pentru valoarea lui PI definiți o constantă simbolică.
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#define PI 3.14
+
+int main()
+{
+	int r;	//raza
+	double L, A;	//lungimea    aria
+	printf("introduceti valoarea razei cercului:");
+	scanf("%d", &r);
+	L = 2 * PI * r ;		
+	A= PI * r * r;	
+	printf("lungimea cercului este:%10.3lf", L);
+	printf("aria cercului este:%10.3lf", A);
+
+	return 0;
+}
+
+//Pascale Iulian
+//9. Se citesc de la tastatură ora plecării unui tren din Cluj și ora la care ajunge la Brașov (oră și
+//minute).Să se afișeze durata călătoriei(în ore și minute).
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+
+int plecare()
+{
+	int ora,minute;
+	printf("ora plecarii unui tren din Cluj:");
+	scanf("%d\n%d", &ora, &minute);
+	minute = ora * 60 + minute;
+	return minute;
+}
+int sosire()
+{
+	int ora, minute;
+	printf("ora la care ajunge trenul la Brasov");
+	scanf("%d\n%d", &ora, &minute);
+	minute = ora * 60 + minute;
+	return minute;
+} 
+
+int main()
+{
+	int ora1,ora2,minute1,minute2,durata, ore_trecute, minute_trecute;
+	minute1 = plecare();
+	minute2 = sosire();
+	durata = minute2 - minute1;
+	ore_trecute = durata / 60;
+	minute_trecute = durata % 60;
+	printf("durata calatoriei este de %d ore si %d minute", ore_trecute, minute_trecute);
+
+	return 0;
+}
+
+//Pascale Iulian
+//10. Două maşini se deplasează una spre cealaltă cu vitezele v1 şi v2, plecând din două oraşe situate la
+//distanţa d = 100km.Vitezele celor două mașini se citesc de la tastatură.Afisați timpul după care se
+//întâlnesc, exprimat în minute.
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+#define D 100
+
+int main()
+{
+	float v1,v2,t;
+	printf("viteza primei masini este:");
+	scanf("%f", &v1);
+	printf("\nviteza celei de-a 2 a masini este:");
+	scanf("%f", &v2);
+	t = D / (v1 + v2);
+	printf("\nmasinile se intalnesc in %f minute", t*60 );
+	return 0;
+}
+
+
+//Pascale Iulian
+//11. Să se scrie un program care afişează valoarea polinomului de gradul 3 pentru o anumită valoare a
+//variabilei reale x.
+#include  <stdio.h>
+#include  <math.h>
+
+int  main() {
+    int  x = 172;    int  a, b, c;
+    float  nr = 172;
+    c = x % 10;  x = x / 10;  //x->17  acum;  c=2;
+    b = x % 10;  x = x / 10;  //x->1  acum;  b=7;
+    a = x % 10;  //a=1;
+    printf("polinomul  nr  %f  este  %d*100+%d*10+1*%d", nr, a, b, c);
+
+
+    return  0;
+}
+
+//Pascale Iulian
+//12. Să se scrie un program care citeşte lungimile laturilor unui triunghi (folosind variabile întregi) şi
+//afişează aria triunghiului ca valoare reală.
+#include  <stdio.h>
+#include<math.h>
+
+int  main() {
+    int  a, b, c, sp;        double  aria;
+    printf("introduceti  valorile  laturilor  triunghiului\n");
+    scanf_s("%d%d%d", &a, &b, &c);
+    sp = (a + b + c) / 2;      //semiperimetrul
+    aria = sqrt(sp * (sp - a) * (sp - b) * (sp - c));
+    printf("Aria  triunghiului  este  egala  cu  %lf", aria);
+
+    return  0;
+}
+
+//Pascale Iulian
+//13. Să se scrie un program care afişează valorile biţilor unei variabile de tip unsigned char aplicând
+//succesiv operatorul de deplasare dreapta şi operatorul% .
+
+#include<stdio.h>
+
+void main()
+{
+	unsigned char a = 'a';			int i;
+	for (i = 0; i < sizeof(char) * 8; i++)  //reprezentarea unui byte
+	{ 
+		printf("valoarea bitului %d este %u\n", i + 1, a % 2);
+		a = a >> 1;			//deplasarea la dreapta a bitilor
+	}
+		
+}
+
+
+//Pascale Iulian
+//14. Să se scrie un program care citeşte de la intrarea standard un număr întreg şi afişează numărul de
+//zerouri din reprezentarea sa binară.
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+void main()
+{
+	int nr,nr_biti,i;
+	nr_biti = 0;
+	printf("introduceti valoarea nr:");
+	scanf_s("%d", &nr);
+	int x = nr;
+	for (i = 0; i < sizeof(int) * 8; i++)
+	{
+		if (x % 2 == 0)
+			nr_biti = nr_biti + 1;
+		x = x / 2;
+	}
+	printf("%d are %d zerouri", nr, nr_biti);
+}
+
+
+
+//Pascale Iulian
+//15. Se citesc trei numere de la tastatură (a, b şi c). Să se determine aria dreptunghiului ale cărui laturi
+//sunt a şi b şi verificaţi dacă diagonala dreptunghiului este egală cu c.
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+
+void main()
+{
+	double a, b, c,aria;
+	a = 3;	b = 90;	c = 5;
+	aria = a * b;
+	
+	if (c == sqrt(a * a + b * b))
+		printf("aceasta este diagonala dr");
+	else
+		printf("nu este diag");
+}
+
+//Pascale Iulian
+//16. Să se scrie un program care citeşte de la tastatură un caracter, pe care îl afişează pe n rânduri, câte n
+//caractere pe un rând, n citit de la tastatura.
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+
+void main()
+{
+	char a = 'A';
+	int i,k,n = 5;
+	for (i = 0; i < n; i++)
+	{
+		
+		for (k = 0; k < n; k++)
+			printf("%c\t", a);
+		printf("\n");
+	}
+}
+
+//Pascale Iulian
+//17. Să se scrie o aplicaţie C/C++ în care se introduc de la tastatură numere întregi, până ce utilizatorul
+//apasă tasta <space>.Să se determine şi să se afişeze media numerelor impare pozitive.
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+	int nr, k=0;			char c;			double x=0;
+	printf("introduceti nr intregi:\n");
+	do
+	{
+		printf("introduceti un nr intreg:\n");
+		scanf_s("\n%d", &nr);
+		if (nr % 2 != 0 && nr > 0)
+		{
+			x += nr;
+			k++;
+		}
+		printf("apasati o tasta");
+		c = _getch();
+	}while (c != 32);
+	printf("\nmedia nr este:%lf", (float)(x / k));
+	return 0;
+}
+
+
+//Pascale Iulian
+//18. Scrieţi un program pentru determinarea valorii medii a elementelor pozitive/negative dintr-un tablou
+//bidimensional.
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+	float A[2][2], suma=0;	int i, j, nr_elem=0;
+	for (i = 0; i < 2; i++)
+		for (j = 0; j < 2; j++)
+		{
+			printf("\nintroduceti valoarea elementului:");
+			scanf_s("%f", &A[i][j]);
+			suma += A[i][j];
+			nr_elem++;
+		}
+	printf("valoarea medie a elementelor este:%f", (float)(suma / nr_elem));
+	
+	return 0;
+}
+
